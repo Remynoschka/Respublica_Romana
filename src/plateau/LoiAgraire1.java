@@ -2,36 +2,22 @@ package plateau;
 
 public class LoiAgraire1 extends LoiAgraire {
 
-	public LoiAgraire1(){
-		this.couts = 20;
-		this.estActive = false;
-	}
-	
-	@Override
-	public int payerCout(){
-		if (!estActive){
-			Rome.rome.retirerArgent(couts);
-		}
-		return Rome.rome.getArgent();
+	public LoiAgraire1() {
+		super(20, 1, 2, 1, -1);
 	}
 
 	@Override
-	public void activer() {
-		// TODO Auto-generated method stub
-		if (!estActive){
-			payerCout();
-			estActive = true;
+	public int payerCout() {
+		if (!estActive) {
+			Rome.INSTANCE.retirerArgent(couts);
 		}
-
+		abroger();
+		return Rome.INSTANCE.getArgent();
 	}
 
 	@Override
 	public void abroger() {
-		// TODO Auto-generated method stub
-		if (estActive){
-			
-		}
-
+		this.estActive = false;
 	}
 
 }

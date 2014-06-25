@@ -11,12 +11,16 @@ import org.newdawn.slick.Game;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.GameState;
 
+import extended_components.Ecran;
+import extended_components.Popup;
+
 /**
  * 
  * @author Remynoschka
  */
 public class Fenetre extends AppGameContainer {
 	public static Fenetre FENETRE;
+	private boolean popupActive;// moche mais sinon faut tout refaire
 	public static final ConfigMonitors config = ConfigMonitors
 			.getConfiguration();
 
@@ -25,11 +29,28 @@ public class Fenetre extends AppGameContainer {
 	 */
 	private Fenetre(Game game, int width, int height) throws SlickException {
 		super(game, width, height, true);
-	
+
+	}
+
+	public void displayPopup(Popup popup) {
+		((Ecran) Jeu.INSTANCE.getCurrentState()).displayPopup(popup);
+		popupActive = true;
 	}
 
 	public GameState getVueActuelle() {
-		return Jeu.GAME.getCurrentState();
+		return Jeu.INSTANCE.getCurrentState();
+	}
+
+	/**
+	 * 
+	 * @return si une popup est active
+	 */
+	public boolean hasPopupActive() {
+		return popupActive;
+	}
+	
+	public void setPopupActive(boolean val){
+		popupActive = val;
 	}
 
 	/**
@@ -37,9 +58,12 @@ public class Fenetre extends AppGameContainer {
 	 * 
 	 * @param idState
 	 *            : l'id d'un GameState representant cette vue
+	 * @return l'id de l'etat que l'on quitte
 	 */
-	public void changerVueActuelle(int idState) {
-		Jeu.GAME.enterState(idState);
+	public int changerVueActuelle(int idState) {
+		int leave = Jeu.INSTANCE.getCurrentStateID();
+		Jeu.INSTANCE.enterState(idState);
+		return leave;
 	}
 
 	/**
@@ -50,7 +74,7 @@ public class Fenetre extends AppGameContainer {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Fenetre.FENETRE = new Fenetre(Jeu.GAME, ConfigMonitors
+					Fenetre.FENETRE = new Fenetre(Jeu.INSTANCE, ConfigMonitors
 							.getGraphicsDevice().getDisplayMode().getWidth(),
 							ConfigMonitors.getGraphicsDevice().getDisplayMode()
 									.getHeight());

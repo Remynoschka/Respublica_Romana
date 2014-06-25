@@ -13,7 +13,7 @@ public class CarteGuerre extends Carte {
 	protected int soutientNaval;
 	protected int batailleNavale;
 
-	protected boolean disette; // possède un effet de disette
+	protected boolean disette; // possï¿½de un effet de disette
 	protected int or; // or gagne avec la guerre
 
 	protected int[] desastre = new int[2];
@@ -37,6 +37,15 @@ public class CarteGuerre extends Carte {
 	 */
 	public boolean combattre(List<Armee> armees) {
 		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see cartes.Carte#pioche()
+	 */
+	@Override
+	public void pioche() {
+		// TODO carte guerre piochee
+		
 	}
 	
 	

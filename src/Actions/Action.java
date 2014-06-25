@@ -1,7 +1,10 @@
 package Actions;
 
-import ihm.EcranPrincipal;
+import ihm.EcranRejoindrePartie;
+import ihm.EcranSalleAttente;
 import ihm.Fenetre;
+import main.Jeu;
+import multiplayer.Serveur;
 
 /**
  * Classe pour les actions des cartes Actions
@@ -15,12 +18,19 @@ public abstract class Action {
 	 */
 	public abstract void actionPerformed();
 
+	public static final Action QUITTER = new Action() {
+
+		@Override
+		public void actionPerformed() {
+			Fenetre.FENETRE.exit();
+		}
+	};
+
 	public static final Action REJOINDRE = new Action() {
 
 		@Override
 		public void actionPerformed() {
-			// TODO Faire l'ecran pour rejoindre
-			Fenetre.FENETRE.changerVueActuelle(EcranPrincipal.ID);
+			Fenetre.FENETRE.changerVueActuelle(EcranRejoindrePartie.ID);
 		}
 	};
 
@@ -28,8 +38,18 @@ public abstract class Action {
 
 		@Override
 		public void actionPerformed() {
-			// TODO passer a l'ecran heberger partie
-			System.out.println("Heberger");
+			Serveur.INSTANCE.start();
+			((EcranSalleAttente) Jeu.INSTANCE.getState(EcranSalleAttente.ID))
+					.setHost();
+			Fenetre.FENETRE.changerVueActuelle(EcranSalleAttente.ID);
+		}
+	};
+
+	public static final Action CONNECTER = new Action() {
+
+		@Override
+		public void actionPerformed() {
+			Fenetre.FENETRE.changerVueActuelle(EcranSalleAttente.ID);
 		}
 	};
 }

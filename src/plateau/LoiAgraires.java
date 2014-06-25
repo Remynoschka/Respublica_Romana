@@ -1,12 +1,20 @@
 package plateau;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoiAgraires {
-	protected LoiAgraire1 loiAgraire1;
-	protected LoiAgraire2 loiAgraire2;
-	protected LoiAgraire3 loiAgraire3;
+
+	protected List<LoiAgraire> lois;
 
 	public LoiAgraires() {
-
+		lois = new ArrayList<LoiAgraire>();
+		lois.add(new LoiAgraire1());
+		lois.add(LoiAgraire.buildLoiAgraire2());
+		lois.add(LoiAgraire.buildLoiAgraire2());
+		lois.add(LoiAgraire.buildLoiAgraire3());
+		lois.add(LoiAgraire.buildLoiAgraire3());
+		lois.add(LoiAgraire.buildLoiAgraire3());
 	}
 
 	/**
@@ -39,8 +47,10 @@ public class LoiAgraires {
 	 * @return le cout total des lois agraires
 	 */
 	public int payerCouts() {
-		return loiAgraire1.payerCout() + loiAgraire2.payerCout()
-				+ loiAgraire3.payerCout();
-
+		int cout = 0;
+		for (LoiAgraire l : lois) {
+			cout += l.payerCout();
+		}
+		return cout;
 	}
 }

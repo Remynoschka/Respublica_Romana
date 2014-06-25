@@ -2,7 +2,6 @@ package tests;
 
 import jeu.Ere;
 import plateau.Rome;
-import cartes.Carte;
 import cartes.Senateur;
 
 public class CreationArmeeTest {

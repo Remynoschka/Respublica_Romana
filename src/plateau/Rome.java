@@ -1,9 +1,12 @@
 package plateau;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import jeu.Ere;
+import jeu.PhaseMortalite;
 import jeu.Province;
 import cartes.Senateur;
 
@@ -14,18 +17,20 @@ import cartes.Senateur;
  * 
  */
 public class Rome {
-	public static Rome rome = null;
+	public static Rome INSTANCE = null;
 	public static final int REVENU_ETAT_BASE = 100;
-	private ArmeeReserve armee; // les armees que possede Rome
-	private int coffre; // le tresor de Rome
-	private int mecontentement; // le niveau d'agitation sociale
-	private boolean recrutement; // recrutement possible
-	private List<Province> provinces; // les provinces de Rome
-	private Guerres guerres; // les guerres de Rome
-	private int multiplicateurRI; // valeur du recrutement inefficace
-	private Forum forum;;// le forum, la ou les cartes vont etre mises
-	private LoiAgraires loisAgraires;
-	private ReleveSenatoriale releveSenatoriale; // Les senateurs morts
+	protected ArmeeReserve armee; // les armees que possede Rome
+	protected int coffre; // le tresor de Rome
+	protected int mecontentement; // le niveau d'agitation sociale
+	protected boolean recrutement; // recrutement possible
+	protected List<Province> provinces; // les provinces de Rome
+	protected Guerres guerres; // les guerres de Rome
+	protected int multiplicateurRI; // valeur du recrutement inefficace
+	protected Forum forum;;// le forum, la ou les cartes vont etre mises
+	protected LoiAgraires loisAgraires;
+	protected Curie curie; // La curie
+	protected Map<Integer, Senateur> senateursAvecTitre;
+	protected int effetsDisette;
 
 	// -------------------------------------------------------------------------
 
@@ -37,7 +42,7 @@ public class Rome {
 						.getVal())
 				| scenar.getVal() == (Ere.HAUTE_REPUBLIQUE.getVal()
 						| Ere.MOYENNE_REPUBLIQUE.getVal() | Ere.BASSE_REPUBLIQUE
-							.getVal())) {
+						.getVal())) {
 			armee = new ArmeeReserve(this, 4);
 			// MOYENNE REPUBLIQUE
 		} else if (scenar.getVal() == Ere.MOYENNE_REPUBLIQUE.getVal()
@@ -54,8 +59,9 @@ public class Rome {
 		recrutement = true;
 		multiplicateurRI = 1;
 		mecontentement = 0;
-		releveSenatoriale = new ReleveSenatoriale();
+		curie = new Curie();
 		provinces = new ArrayList<Province>();
+		senateursAvecTitre = new HashMap<Integer, Senateur>();
 
 	}
 
@@ -65,11 +71,11 @@ public class Rome {
 	 * @return l'entite rome
 	 */
 	public static Rome newRome(Ere scenar) {
-		if (rome == null) {
-			rome = new Rome(scenar);
-			return rome;
+		if (INSTANCE == null) {
+			INSTANCE = new Rome(scenar);
+			return INSTANCE;
 		} else
-			return rome;
+			return INSTANCE;
 	}
 
 	// -------------------------------------------------------------------------
@@ -83,11 +89,36 @@ public class Rome {
 	}
 
 	/**
+	 * Augmente la valeur du recrutement inefficace
+	 * 
+	 * @return la nouvelle valeur de recrutement inefficace
+	 */
+	public int augmenterRI() {
+		multiplicateurRI++;
+		return multiplicateurRI;
+	}
+
+	/**
+	 * Reinitialise la valeur de recrutement inefficace
+	 */
+	public void reinitRI() {
+		multiplicateurRI = 0;
+	}
+
+	/**
 	 * 
 	 * @return true si le recrutement est possible
 	 */
 	public boolean peutRecruter() {
 		return recrutement;
+	}
+
+	public void desactiverRecrutement() {
+		recrutement = false;
+	}
+
+	public void activerRecrutement() {
+		recrutement = true;
 	}
 
 	// -------------------------------------------------------------------------
@@ -122,6 +153,19 @@ public class Rome {
 	}
 
 	// -------------------------------------------------------------------------
+	/**
+	 * Methode qui execute la phase de revenu de Rome : <br>
+	 * 
+	 * @return le nouvelle quantite de talents dans le tresor de Rome
+	 */
+	public int revenus() {
+		ajouterArgent(REVENU_ETAT_BASE);
+		for (Province p : provinces) {
+			p.revenusEtat();
+		}
+		return coffre;
+	}
+
 	/**
 	 * Methode qui execute la phase de dettes de Rome : <br>
 	 * - Guerres Actives <br>
@@ -158,6 +202,10 @@ public class Rome {
 		return mecontentement;
 	}
 
+	public void emeute() {
+		PhaseMortalite.INSTANCE.piocheJetons(6);
+	}
+
 	// -------------------------------------------------------------------------
 	/**
 	 * Ajoute un senateur a la curie des senateurs
@@ -166,7 +214,30 @@ public class Rome {
 	 *            : Le senateur mort
 	 */
 	public void ajouterSenateurCurie(Senateur s) {
-		releveSenatoriale.ajouterSenateur(s);
+		curie.getReleveSenatoriale().ajouterSenateur(s);
+	}
+
+	public Curie getCurie() {
+		return curie;
+	}
+
+	// -------------------------------------------------------------------------
+	/**
+	 * Augmente les effets de disette
+	 */
+	public void augmenterDisette() {
+		effetsDisette++;
+	}
+
+	/**
+	 * Remet les effets de disette a 0
+	 */
+	public void reinitDisette() {
+		effetsDisette = 0;
+	}
+
+	public int getDisette() {
+		return effetsDisette;
 	}
 
 	// -------------------------------------------------------------------------
@@ -175,4 +246,15 @@ public class Rome {
 		return armee;
 	}
 
+	public Map<Integer, Senateur> getSenateursAvecTitre() {
+		return senateursAvecTitre;
+	}
+
+	public List<Province> getProvinces() {
+		return provinces;
+	}
+
+	public Guerres getGuerres() {
+		return guerres;
+	}
 }

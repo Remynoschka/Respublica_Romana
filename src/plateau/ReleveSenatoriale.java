@@ -7,7 +7,14 @@ import jeu.De;
 import cartes.Senateur;
 import exception.NbDeException;
 
+/**
+ * La releve senatoriale
+ * 
+ * @author Remynoschka
+ * 
+ */
 public class ReleveSenatoriale {
+
 	private List<Senateur> senateurs;
 
 	public ReleveSenatoriale() {

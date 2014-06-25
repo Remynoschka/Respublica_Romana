@@ -76,7 +76,7 @@ public class Province {
 		}
 		revenu -= De.getMauvaisPresage();
 		if (revenu < 0)
-			Rome.rome.retirerArgent(-revenu);
+			Rome.INSTANCE.retirerArgent(-revenu);
 		else
 			gouverneur.ajouterTalents(revenu);
 		gouverneur.setCorrompu();
@@ -102,9 +102,9 @@ public class Province {
 			}
 			revenu -= De.getMauvaisPresage();
 			if (revenu < 0)
-				Rome.rome.retirerArgent(-revenu);
+				Rome.INSTANCE.retirerArgent(-revenu);
 			else
-				Rome.rome.ajouterArgent(revenu);
+				Rome.INSTANCE.ajouterArgent(revenu);
 		}
 		return revenu;
 	}
@@ -142,9 +142,22 @@ public class Province {
 	 * @param gouverneur
 	 *            : le Senateur gouverneur assigne
 	 */
-	public void assignerGouverneur(Senateur gouverneur) {		
+	public void assignerGouverneur(Senateur gouverneur) {
 		this.gouverneur = gouverneur;
 		this.gouverneur.assignerProvince(this);
+	}
+
+	/**
+	 * Fait la phase de retour du gouverneur
+	 * 
+	 */
+	public void retourGouverneur() {
+		if (mandat > 1) {
+			mandat--;
+		} else {
+			gouverneur.retourRome();
+			gouverneur = null;
+		}
 	}
 
 	// ------------------------------------------------------------------------
@@ -152,10 +165,15 @@ public class Province {
 		return nom;
 	}
 
-	public Senateur getGouverneur(){
+	public Senateur getGouverneur() {
 		return this.gouverneur;
 	}
+
 	public boolean estDeveloppe() {
 		return developpe;
+	}
+
+	public int getDureeMandatRestant() {
+		return mandat;
 	}
 }

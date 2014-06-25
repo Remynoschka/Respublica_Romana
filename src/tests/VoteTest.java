@@ -12,30 +12,30 @@ public class VoteTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Partie.nouvellePartie();
-		Joueur jp = new Joueur("JP", null, null);
+		Partie.nouvellePartie(Ere.HAUTE_REPUBLIQUE);
+		Joueur jp = new Joueur(1,"JP", null, null);
 		Partie.PARTIE_EN_COURS.getJoueurs().add(jp);
-		Joueur dudu = new Joueur("Dudu", null, null);
+		Joueur dudu = new Joueur(2,"Dudu", null, null);
 		Partie.PARTIE_EN_COURS.getJoueurs().add(dudu);
-		Joueur djeff = new Joueur("Djeff", null, null);
+		Joueur djeff = new Joueur(3,"Djeff", null, null);
 		Partie.PARTIE_EN_COURS.getJoueurs().add(djeff);
-		Joueur cedric = new Joueur("Cedric", null, null);
+		Joueur cedric = new Joueur(4,"Cedric", null, null);
 		Partie.PARTIE_EN_COURS.getJoueurs().add(cedric);
-		Joueur panpan = new Joueur("Panpan", null, null);
+		Joueur panpan = new Joueur(5,"Panpan", null, null);
 		Partie.PARTIE_EN_COURS.getJoueurs().add(panpan);
-		jp.addSenateurs(new Senateur("4", "Cesar", Ere.HAUTE_REPUBLIQUE, 3));
-		cedric.addSenateurs(new Senateur("18", "Scipion", Ere.HAUTE_REPUBLIQUE,
+		jp.addSenateur(new Senateur("4", "Cesar", Ere.HAUTE_REPUBLIQUE, 3));
+		cedric.addSenateur(new Senateur("18", "Scipion", Ere.HAUTE_REPUBLIQUE,
 				2));
-		jp.addSenateurs(new Senateur("1", "Asterix", Ere.HAUTE_REPUBLIQUE, 1));
-		dudu.addSenateurs(new Senateur("2", "Obelix", Ere.HAUTE_REPUBLIQUE, 4));
-		panpan.addSenateurs(new Senateur("16", "Aurelius",
+		jp.addSenateur(new Senateur("1", "Asterix", Ere.HAUTE_REPUBLIQUE, 1));
+		dudu.addSenateur(new Senateur("2", "Obelix", Ere.HAUTE_REPUBLIQUE, 4));
+		panpan.addSenateur(new Senateur("16", "Aurelius",
 				Ere.HAUTE_REPUBLIQUE, 3));
-		djeff.addSenateurs(new Senateur("11", "Lucius", Ere.HAUTE_REPUBLIQUE, 2));
+		djeff.addSenateur(new Senateur("11", "Lucius", Ere.HAUTE_REPUBLIQUE, 2));
 
 		if (Vote.lancerVote()) {
-			System.out.println("Loi pass�e");
+			System.out.println("Loi passee");
 		} else {
-			System.out.println("Loi refus�e");
+			System.out.println("Loi refusee");
 		}
 	}
 }

@@ -11,7 +11,6 @@ public class AssignationProvinceTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Rome rome = Rome.newRome(Ere.HAUTE_REPUBLIQUE);
 		Senateur s = new Senateur("4", "Julius", Ere.HAUTE_REPUBLIQUE, 4);
 		s.ajouterTalents(30);
 		
@@ -25,9 +24,9 @@ public class AssignationProvinceTest {
 		p.spoliation();
 		System.out.println("apres : " + s.getTalents());
 		System.out.println("REVENUS POUR L'ETAT");
-		System.out.println("avant : " + Rome.rome.getArgent());
+		System.out.println("avant : " + Rome.INSTANCE.getArgent());
 		p.revenusEtat();
-		System.out.println("apres : " + Rome.rome.getArgent());
+		System.out.println("apres : " + Rome.INSTANCE.getArgent());
 
 	}
 }

@@ -7,27 +7,22 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 import plateau.Rome;
+import titres.Titre;
 import vote.Abstention;
 import vote.Non;
 import vote.Oui;
 import vote.ResultatVote;
-
 import main.Main;
-
 import exception.ChoixIncorrectException;
 import exception.NbDeException;
 import exception.SenateurDejaOccupeException;
 import exception.TalentsInsuffisantException;
-import extended_components.PanelSenateur;
-
 import jeu.Armee;
 import jeu.De;
 import jeu.Ere;
 import jeu.Legion;
 import jeu.Province;
 import joueurs.Joueur;
-
-import Titres.Titre;
 
 /**
  * Classe definissant un senateur
@@ -193,7 +188,7 @@ public class Senateur extends Carte {
 			throw new TalentsInsuffisantException();
 		else {
 			talents -= nb;
-			Rome.rome.ajouterArgent(nb);
+			Rome.INSTANCE.ajouterArgent(nb);
 			if (nb >= 50)
 				influence += 7;
 			else if (nb >= 25)
@@ -311,7 +306,7 @@ public class Senateur extends Carte {
 			else {
 				talents -= 7;
 				popularite++;
-				Rome.rome.modifierMecontentement(-1);
+				Rome.INSTANCE.modifierMecontentement(-1);
 			}
 		}
 		if (type == JEUX_CHARS) {
@@ -320,7 +315,7 @@ public class Senateur extends Carte {
 			else {
 				talents -= 13;
 				popularite += 2;
-				Rome.rome.modifierMecontentement(-2);
+				Rome.INSTANCE.modifierMecontentement(-2);
 			}
 		}
 		if (type == JEUX_GLADIATEURS) {
@@ -329,7 +324,7 @@ public class Senateur extends Carte {
 			else {
 				talents -= 18;
 				popularite += 3;
-				Rome.rome.modifierMecontentement(-3);
+				Rome.INSTANCE.modifierMecontentement(-3);
 			}
 		} else {
 			throw new ChoixIncorrectException();
@@ -347,9 +342,10 @@ public class Senateur extends Carte {
 	 */
 
 	public void attribuerTitre(Titre titre) throws SenateurDejaOccupeException {
-		if (this.titre != null) {
+		if (this.titre == null) {
 			this.titre = titre;
 			modifierInfluence(titre.getBonusInfluence());
+			Rome.INSTANCE.getSenateursAvecTitre().put(titre.getRangTitre(), this);
 		} else {
 			throw new SenateurDejaOccupeException();
 		}
@@ -360,6 +356,11 @@ public class Senateur extends Carte {
 	 */
 	public void retirerTitre() {
 		this.titre = null;
+		Rome.INSTANCE.getSenateursAvecTitre().remove(this);
+	}
+
+	public Titre getTitre() {
+		return this.titre;
 	}
 
 	// ------------------------------------------------------------------------
@@ -420,6 +421,10 @@ public class Senateur extends Carte {
 		this.aRome = true;
 		this.province = null;
 	}
+	
+	public boolean estARome(){
+		return aRome;
+	}
 
 	// ------------------------------------------------------------------------
 	/**
@@ -427,7 +432,7 @@ public class Senateur extends Carte {
 	 */
 	public void tuer() {
 		if (!chefFaction) {
-			this.joueur.perdSenateurs(this);
+			this.joueur.perdSenateur(this);
 			this.joueur = null;
 			this.aligne = false;
 		}
@@ -440,7 +445,7 @@ public class Senateur extends Carte {
 		this.aRome = true;
 		this.prisonnier = false;
 		this.talents = 0;
-		Rome.rome.getArmees().retourArmee(armee);
+		Rome.INSTANCE.getArmees().retourArmee(armee);
 		for (Legion l : veterans) {
 			l.perdAllegence();
 		}
@@ -448,7 +453,7 @@ public class Senateur extends Carte {
 		// TODO rendre les concessions
 		// TODO rendre titre
 		// TODO rendre province
-		// TODO
+		// TODO ...
 	}
 
 	/**
@@ -482,6 +487,11 @@ public class Senateur extends Carte {
 	}
 
 	// ------------------------------------------------------------------------
+	
+	public Joueur getJoueur(){
+		return joueur;
+	}
+	
 	public void setCorrompu() {
 		corrompu = true;
 	}
@@ -591,5 +601,16 @@ public class Senateur extends Carte {
 				+ "\n Loyaute : " + loyaute + "\n Influence : " + influence
 				+ "\n Chevaliers : " + chevaliers + "\n Popularite :"
 				+ popularite);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see cartes.Carte#pioche()
+	 */
+	@Override
+	public void pioche() {
+		// TODO envoyer la carte au forum
+
 	}
 };

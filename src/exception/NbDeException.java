@@ -1,10 +1,12 @@
 package exception;
 
+import main.Main;
+
 @SuppressWarnings("serial")
 public class NbDeException extends Exception {
 
-
-	public NbDeException(){
-		System.err.println("Nombre de Dés incorrect");
+	public NbDeException() {
+		if (Main.debug)
+			System.err.println("Nombre de DÃ©s incorrect");
 	}
 }
