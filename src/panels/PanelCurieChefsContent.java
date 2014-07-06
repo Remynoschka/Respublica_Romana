@@ -13,7 +13,7 @@ public class PanelCurieChefsContent extends PanelCurieContent {
 	@Override
 	public void render(GUIContext container, Graphics g) {
 		fond.draw(getX(), getY(), getWidth(), getHeight());
-		//TODO afficher les chefs a la curie
+		// TODO afficher les chefs a la curie
 	}
 
 }

@@ -20,7 +20,7 @@ import org.newdawn.slick.state.StateBasedGame;
  * 
  */
 public abstract class Ecran extends BasicGameState {
-	private List<Popup> popups;
+	private List<Popup>	popups;
 
 	public Ecran() {
 		popups = new ArrayList<Popup>();
@@ -33,15 +33,19 @@ public abstract class Ecran extends BasicGameState {
 			p.render(container, g);
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see org.newdawn.slick.state.GameState#update(org.newdawn.slick.GameContainer, org.newdawn.slick.state.StateBasedGame, int)
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * org.newdawn.slick.state.GameState#update(org.newdawn.slick.GameContainer,
+	 * org.newdawn.slick.state.StateBasedGame, int)
 	 */
 	@Override
 	public void update(GameContainer container, StateBasedGame jeu, int delta)
 			throws SlickException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	/**

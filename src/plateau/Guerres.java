@@ -5,11 +5,13 @@ import java.util.ArrayList;
 import cartes.CarteGuerre;
 
 public class Guerres {
-	private ArrayList<CarteGuerre> guerresInactives; // les guerres inactives
-	private ArrayList<CarteGuerre> guerresImminentes; // guerres imminentes
-	private ArrayList<CarteGuerre> guerresNonEntreprises; // guerres non
+	private ArrayList<CarteGuerre>	guerresInactives;		// les guerres
+															// inactives
+	private ArrayList<CarteGuerre>	guerresImminentes;		// guerres
+															// imminentes
+	private ArrayList<CarteGuerre>	guerresNonEntreprises;	// guerres non
 															// entreprises
-	private ArrayList<CarteGuerre> guerresActives; // guerres actives
+	private ArrayList<CarteGuerre>	guerresActives;		// guerres actives
 
 	public Guerres() {
 		guerresInactives = new ArrayList<CarteGuerre>();

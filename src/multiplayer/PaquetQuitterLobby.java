@@ -5,11 +5,11 @@ package multiplayer;
 
 /**
  * @author Remynoschka
- *
+ * 
  */
 public class PaquetQuitterLobby extends PaquetReseau {
 
-	private int id;
+	private int	id;
 
 	/**
 	 * @return the id
@@ -19,11 +19,11 @@ public class PaquetQuitterLobby extends PaquetReseau {
 	}
 
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 }

@@ -31,45 +31,60 @@ import joueurs.Joueur;
  * 
  */
 public class Senateur extends Carte {
-	public static final int JEUX_ESCLAVE = 0;
-	public static final int JEUX_CHARS = 1;
-	public static final int JEUX_GLADIATEURS = 2;
+	public static final int			JEUX_ESCLAVE		= 0;
+	public static final int			JEUX_CHARS			= 1;
+	public static final int			JEUX_GLADIATEURS	= 2;
 
-	protected String id_senateur;
-	protected Joueur joueur; // le joueur qui possede ce senateur
+	protected String				id_senateur;
+	protected Joueur				joueur;					// le joueur qui
+																// possede ce
+																// senateur
 
-	protected boolean aligne;
-	protected boolean rebelle;
-	protected boolean prisonnier;
+	protected boolean				aligne;
+	protected boolean				rebelle;
+	protected boolean				prisonnier;
 
-	protected int militaire;
-	protected int eloquance;
-	protected int loyaute;
+	protected int					militaire;
+	protected int					eloquance;
+	protected int					loyaute;
 
-	protected int popularite;
-	protected int influence;
-	protected int influenceDepart;
-	protected int chevaliers;
+	protected int					popularite;
+	protected int					influence;
+	protected int					influenceDepart;
+	protected int					chevaliers;
 
-	protected int talents;// le tresor personnel du senateur
+	protected int					talents;					// le tresor
+																// personnel du
+																// senateur
 
-	protected ArrayList<Concession> concessions; // les concessions du senateur
-	protected ArrayList<Legion> veterans; // les legions ayant jure allegence au
-											// senateur
+	protected ArrayList<Concession>	concessions;				// les
+																// concessions
+																// du senateur
+	protected ArrayList<Legion>		veterans;					// les legions
+																// ayant jure
+																// allegence au
+																// senateur
 
-	protected boolean corrompu;
-	protected boolean majeur;
-	protected boolean ancienConsul;
-	protected boolean chefFaction;
+	protected boolean				corrompu;
+	protected boolean				majeur;
+	protected boolean				ancienConsul;
+	protected boolean				chefFaction;
 
-	protected boolean estEscorte; // possede une escorde officiele
-	protected boolean aRome; // le senateur est a Rome ou pas
-	protected Titre titre; // le titre du senateur
-	protected Province province; // la province du senateur
+	protected boolean				estEscorte;				// possede une
+																// escorde
+																// officiele
+	protected boolean				aRome;						// le senateur
+																// est a Rome ou
+																// pas
+	protected Titre					titre;						// le titre du
+																// senateur
+	protected Province				province;					// la province
+																// du senateur
 
-	protected Armee armee; // l'armee du senateur
+	protected Armee					armee;						// l'armee du
+																// senateur
 
-	protected Image image; // Sa photo
+	protected Image					image;						// Sa photo
 
 	public Senateur(String id, String nom, Ere ere, int eloquance) {
 		super(nom, ere);
@@ -345,7 +360,8 @@ public class Senateur extends Carte {
 		if (this.titre == null) {
 			this.titre = titre;
 			modifierInfluence(titre.getBonusInfluence());
-			Rome.INSTANCE.getSenateursAvecTitre().put(titre.getRangTitre(), this);
+			Rome.INSTANCE.getSenateursAvecTitre().put(titre.getRangTitre(),
+					this);
 		} else {
 			throw new SenateurDejaOccupeException();
 		}
@@ -369,17 +385,17 @@ public class Senateur extends Carte {
 			System.out.println("0 : Abstention, 1 : Oui, 2 : Non");
 			int result = new Scanner(System.in).nextInt();
 			switch (result) {
-			case 0:
+				case 0:
 
-				return new Abstention(this);
-			case 1:
+					return new Abstention(this);
+				case 1:
 
-				return new Oui(this);
-			case 2:
+					return new Oui(this);
+				case 2:
 
-				return new Non(this);
-			default:
-				return new Abstention(this);
+					return new Non(this);
+				default:
+					return new Abstention(this);
 			}
 		}
 		return null;
@@ -421,8 +437,8 @@ public class Senateur extends Carte {
 		this.aRome = true;
 		this.province = null;
 	}
-	
-	public boolean estARome(){
+
+	public boolean estARome() {
 		return aRome;
 	}
 
@@ -487,11 +503,11 @@ public class Senateur extends Carte {
 	}
 
 	// ------------------------------------------------------------------------
-	
-	public Joueur getJoueur(){
+
+	public Joueur getJoueur() {
 		return joueur;
 	}
-	
+
 	public void setCorrompu() {
 		corrompu = true;
 	}

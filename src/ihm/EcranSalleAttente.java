@@ -38,22 +38,22 @@ import extended_components.Ecran;
  * 
  */
 public class EcranSalleAttente extends Ecran {
-	public static final int ID = 3;
-	private static final int LIMITE_JOUEURS = 6;
-	private boolean host;
-	private Image fond1;
-	private Image fond2;
-	private Bouton lancer;
-	private Bouton annuler;
-	private Bouton quit;
-	private Checkbox h_rep;
-	private Checkbox m_rep;
-	private Checkbox b_rep;
-	private Checkbox alternatif;
-	private Checkbox jeu_avance;
-	private Map<Integer, LobbyPlayerDisplay> joueurs;
-	private List<Image> symbolesDispo;
-	private String ip = "";
+	public static final int						ID				= 3;
+	private static final int					LIMITE_JOUEURS	= 6;
+	private boolean								host;
+	private Image								fond1;
+	private Image								fond2;
+	private Bouton								lancer;
+	private Bouton								annuler;
+	private Bouton								quit;
+	private Checkbox							h_rep;
+	private Checkbox							m_rep;
+	private Checkbox							b_rep;
+	private Checkbox							alternatif;
+	private Checkbox							jeu_avance;
+	private Map<Integer, LobbyPlayerDisplay>	joueurs;
+	private List<Image>							symbolesDispo;
+	private String								ip				= "";
 
 	/**
 	 * 
@@ -212,8 +212,10 @@ public class EcranSalleAttente extends Ecran {
 			try {
 				if (!joueurs.containsKey(id)) {
 					j.setID(id);
-					if (j.getSymbole() == null ||  (j.getSymbole().getResourceReference().equals("")))
-							j.setSymbole(symbolesDispo.remove(0));
+					if (j.getSymbole() == null
+							|| (j.getSymbole().getResourceReference()
+									.equals("")))
+						j.setSymbole(symbolesDispo.remove(0));
 					joueurs.put(id, new LobbyPlayerDisplay(Fenetre.FENETRE, j));
 				}
 			} catch (SlickException e) {

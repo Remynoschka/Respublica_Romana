@@ -15,7 +15,7 @@ import exception.NbDeException;
  */
 public class ReleveSenatoriale {
 
-	private List<Senateur> senateurs;
+	private List<Senateur>	senateurs;
 
 	public ReleveSenatoriale() {
 		senateurs = new ArrayList<Senateur>();

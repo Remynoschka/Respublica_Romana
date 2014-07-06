@@ -5,10 +5,10 @@ import joueurs.Joueur;
 
 public abstract class Carte {
 
-	protected String nom;
-	protected int num; // ID de la carte
-	protected Joueur joueur; // Le joueur qui possede la carte
-	protected Ere ere; // l'ere de la carte
+	protected String	nom;
+	protected int		num;	// ID de la carte
+	protected Joueur	joueur; // Le joueur qui possede la carte
+	protected Ere		ere;	// l'ere de la carte
 
 	// ------------------------------------------------------------------------
 	public Carte(String nom, Ere ere) {

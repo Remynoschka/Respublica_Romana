@@ -13,7 +13,7 @@ public class AssignationProvinceTest {
 	public static void main(String[] args) {
 		Senateur s = new Senateur("4", "Julius", Ere.HAUTE_REPUBLIQUE, 4);
 		s.ajouterTalents(30);
-		
+
 		Province p = new Province("Gaule", null, 10, 2, 1, 3, 2, 1, -1, 1, -2,
 				0);
 		System.out.println("ASSIGNATION");

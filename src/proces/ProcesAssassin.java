@@ -7,7 +7,7 @@ import cartes.Senateur;
 
 /**
  * @author Remynoschka
- *
+ * 
  */
 public class ProcesAssassin extends ProcesMajeur {
 

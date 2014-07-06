@@ -14,9 +14,9 @@ import com.esotericsoftware.kryonet.Client;
  * 
  */
 public class ClientRPR extends NetworkInterface {
-	public static ClientRPR INSTANCE;
-	private Client client;
-	private String ipServeur;
+	public static ClientRPR	INSTANCE;
+	private Client			client;
+	private String			ipServeur;
 
 	public static ClientRPR getInstance(String ipServeur, String playerName) {
 		if (INSTANCE == null)

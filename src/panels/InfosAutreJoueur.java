@@ -21,13 +21,13 @@ import cartes.Senateur;
  * 
  */
 public class InfosAutreJoueur extends PanelPrincipal {
-	private Joueur joueur;
-	private List<PanelSenateur> senateurs;
-	private Image fond;
+	private Joueur				joueur;
+	private List<PanelSenateur>	senateurs;
+	private Image				fond;
 
 	public InfosAutreJoueur(GUIContext container, Joueur j, GameState etat)
 			throws SlickException {
-		super(container,etat);
+		super(container, etat);
 		this.joueur = j;
 		senateurs = new ArrayList<PanelSenateur>();
 		int x = 20;

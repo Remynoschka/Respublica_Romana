@@ -19,8 +19,8 @@ import titres.Titre;
  * 
  */
 public class PanelTitreDetail extends MouseOverArea {
-	private Image fond;
-	private Titre titre;
+	private Image	fond;
+	private Titre	titre;
 
 	/**
 	 * @param container
@@ -73,7 +73,7 @@ public class PanelTitreDetail extends MouseOverArea {
 						- g.getFont().getHeight("" + titre.getBonusInfluence())
 						- 5);
 		// Ecrire rang
-		g.drawString(""+titre.getRangTitre(), getX() + 5, getY()
+		g.drawString("" + titre.getRangTitre(), getX() + 5, getY()
 				+ getHeight()
 				- g.getFont().getHeight("" + titre.getRangTitre()) - 5);
 		g.setFont(Jeu.FONT);

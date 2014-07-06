@@ -18,13 +18,13 @@ import org.newdawn.slick.state.GameState;
  * 
  */
 public class PanelAutreJoueur extends MouseOverArea {
-	private Joueur joueur;
-	private boolean mouseInto;
-	private InfosAutreJoueur infos;
-	public static final int HAUTEUR_IMAGE = 70;
+	private Joueur				joueur;
+	private boolean				mouseInto;
+	private InfosAutreJoueur	infos;
+	public static final int		HAUTEUR_IMAGE	= 70;
 
-	public PanelAutreJoueur(GUIContext container, int x, int y, Joueur joueur, GameState etat)
-			throws SlickException {
+	public PanelAutreJoueur(GUIContext container, int x, int y, Joueur joueur,
+			GameState etat) throws SlickException {
 		super(container, new Image(0, 0), x, y, HAUTEUR_IMAGE, 111);
 		this.joueur = joueur;
 		this.infos = new InfosAutreJoueur(container, joueur, etat);
@@ -37,8 +37,8 @@ public class PanelAutreJoueur extends MouseOverArea {
 				&& newy < getY() + getHeight()) {
 			mouseInto = true;
 		} else if (!(mouseInto && newx < infos.getX() + infos.getWidth()
-				&& newx > infos.getX() && newy > infos.getY()
-				&& newy < infos.getY() + infos.getHeight())) {
+				&& newx > infos.getX() && newy > infos.getY() && newy < infos
+				.getY() + infos.getHeight())) {
 			mouseInto = false;
 		}
 	}
@@ -48,7 +48,7 @@ public class PanelAutreJoueur extends MouseOverArea {
 		super.render(container, g);
 		joueur.getSymbole().draw(getX(), 20, HAUTEUR_IMAGE, HAUTEUR_IMAGE);
 		g.setColor(new Color(215, 160, 75));
-		g.drawString(joueur.getNom().toUpperCase(), getX() + HAUTEUR_IMAGE/2
+		g.drawString(joueur.getNom().toUpperCase(), getX() + HAUTEUR_IMAGE / 2
 				- g.getFont().getWidth(joueur.getNom().toUpperCase()) / 2, 100);
 		if (mouseInto) {
 			g.setColor(Color.orange);

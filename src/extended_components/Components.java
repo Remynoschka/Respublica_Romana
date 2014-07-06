@@ -14,9 +14,9 @@ import org.newdawn.slick.state.GameState;
  * 
  */
 public abstract class Components extends MouseOverArea {
-	protected boolean disabled = false;
-	protected boolean visible = true;
-	protected GameState conteneur;
+	protected boolean	disabled	= false;
+	protected boolean	visible		= true;
+	protected GameState	conteneur;
 
 	/**
 	 * @param container

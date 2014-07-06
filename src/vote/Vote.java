@@ -11,19 +11,21 @@ public class Vote {
 
 	/**
 	 * Lance un vote.
-	 * @return un boolean indiquant si le vote a été réussis ou pas.
+	 * 
+	 * @return un boolean indiquant si le vote a ï¿½tï¿½ rï¿½ussis ou pas.
 	 */
-	public static boolean lancerVote(){
-		int compteur = 0; // Ce compteur sers à compter les voix
-		Iterator<Joueur> iterator = Partie.PARTIE_EN_COURS.getJoueurs().iterator();
-		while(iterator.hasNext()){
+	public static boolean lancerVote() {
+		int compteur = 0; // Ce compteur sers ï¿½ compter les voix
+		Iterator<Joueur> iterator = Partie.PARTIE_EN_COURS.getJoueurs()
+				.iterator();
+		while (iterator.hasNext()) {
 			Joueur joueur = iterator.next();
 			Iterator<Senateur> senateurs = joueur.getSenateurs().iterator();
 			int voix = 0;
-			while(senateurs.hasNext()){
+			while (senateurs.hasNext()) {
 				voix += senateurs.next().vote().getValue();
 			}
-			System.out.println(joueur.getNom()+" a voté pour "+voix);
+			System.out.println(joueur.getNom() + " a votï¿½ pour " + voix);
 			compteur += voix;
 		}
 

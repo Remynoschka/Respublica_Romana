@@ -17,7 +17,7 @@ import org.newdawn.slick.state.GameState;
  * 
  */
 public class ChampTexte extends TextField {
-	protected GameState conteneur;
+	protected GameState	conteneur;
 
 	/**
 	 * @param container

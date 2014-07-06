@@ -7,7 +7,7 @@ package jeu;
  * 
  */
 public class Flotte {
-	private int numFlotte;
+	private int	numFlotte;
 
 	public Flotte(int numFlotte) {
 		this.numFlotte = numFlotte;

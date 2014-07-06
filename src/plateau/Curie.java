@@ -10,9 +10,9 @@ import exception.NbDeException;
  * 
  */
 public class Curie {
-	private ReleveSenatoriale senateurs;
-	private ConcessionsDetruites concessions;
-	private Chefs chefs;
+	private ReleveSenatoriale		senateurs;
+	private ConcessionsDetruites	concessions;
+	private Chefs					chefs;
 
 	public Curie() {
 		senateurs = new ReleveSenatoriale();

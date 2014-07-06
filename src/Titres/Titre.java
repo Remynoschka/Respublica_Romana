@@ -15,13 +15,16 @@ import Actions.Action;
  */
 public abstract class Titre {
 
-	private String nom; // le nom du titre
-	private int importance; // le numero d'importance du titre
-	private int bonusInfluence; // le bonus d'influence que donne le titre
-	private String[] descriptif; // Texte descriptif du titre
-	private IconeTitre ihm; // L'element d'ihm correspondant au titre
+	private String		nom;			// le nom du titre
+	private int			importance;	// le numero d'importance du titre
+	private int			bonusInfluence; // le bonus d'influence que donne le
+										// titre
+	private String[]	descriptif;	// Texte descriptif du titre
+	private IconeTitre	ihm;			// L'element d'ihm correspondant au
+										// titre
 
-	protected Titre(String nom, int rang, int bonus, String[] descriptif, int w, int h) {
+	protected Titre(String nom, int rang, int bonus, String[] descriptif,
+			int w, int h) {
 		this.nom = nom;
 		importance = rang;
 		bonusInfluence = bonus;
@@ -64,6 +67,5 @@ public abstract class Titre {
 	public IconeTitre getIcon() {
 		return ihm;
 	}
-
 
 }

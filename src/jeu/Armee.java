@@ -11,9 +11,9 @@ import cartes.Senateur;
  * 
  */
 public class Armee {
-	private ArrayList<Legion> legions;
-	private ArrayList<Flotte> flottes;
-	private Senateur chef;	
+	private ArrayList<Legion>	legions;
+	private ArrayList<Flotte>	flottes;
+	private Senateur			chef;
 
 	// ---------------------------------------------------------------
 	public Armee(Senateur senateur, ArrayList<Legion> legions,

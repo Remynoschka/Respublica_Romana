@@ -11,12 +11,12 @@ import cartes.TasCartes;
 import evenements.Evenement;
 
 public class Partie {
-	public static Partie PARTIE_EN_COURS;
-	public static final int LIMITE_JOUEURS = 6;
-	private TasCartes tas;
-	private Ere ereActuelle;
-	private List<Joueur> joueurs;
-	private List<Evenement> eventsActifs;
+	public static Partie	PARTIE_EN_COURS;
+	public static final int	LIMITE_JOUEURS	= 6;
+	private TasCartes		tas;
+	private Ere				ereActuelle;
+	private List<Joueur>	joueurs;
+	private List<Evenement>	eventsActifs;
 
 	private Partie(Ere ere, List<Joueur> joueurs) {
 		this.joueurs = joueurs;

@@ -7,6 +7,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
 import ihm.EcranAcceuil;
+import ihm.EcranRejoindrePartie;
 import ihm.EcranSalleAttente;
 import ihm.Fenetre;
 import joueurs.Joueur;
@@ -84,7 +85,6 @@ public class ConnexionListener extends Listener {
 				// Envoyer a tout les joueurs que qqn s'est connecte
 				for (Joueur j : ((EcranSalleAttente) Jeu.INSTANCE
 						.getState(EcranSalleAttente.ID)).getAllPlayers()) {
-
 					PaquetJoueur paquetJ = new PaquetJoueur();
 					paquetJ.setID(j.getID());
 					paquetJ.setName(j.getNom());
@@ -100,18 +100,30 @@ public class ConnexionListener extends Listener {
 				paquet.setException(e);
 				Serveur.INSTANCE.SentToUDP(c.getID(), paquet);
 			}
+
 		} else if (obj instanceof PaquetJoueur) {
+			// On recoit les informations d'un joueur
 			try {
 				Joueur j;
 				j = new Joueur(((PaquetJoueur) obj).getID(),
 						((PaquetJoueur) obj).getName(), new Image(
 								((PaquetJoueur) obj).getSymboleName()));
+				switch (Jeu.INSTANCE.getCurrentStateID()) {
+					case EcranRejoindrePartie.ID:
 
-				((EcranSalleAttente) Jeu.INSTANCE
-						.getState(EcranSalleAttente.ID))
-						.addJoueur(j.getID(), j);
-				if (Jeu.INSTANCE.getCurrentStateID() != EcranSalleAttente.ID)
-					Action.CONNECTER.actionPerformed();
+						((EcranSalleAttente) Jeu.INSTANCE
+								.getState(EcranSalleAttente.ID)).addJoueur(
+								j.getID(), j);
+						if (Jeu.INSTANCE.getCurrentStateID() != EcranSalleAttente.ID)
+							Action.CONNECTER.actionPerformed();
+						break;
+					case EcranSalleAttente.ID:
+						((EcranSalleAttente) Jeu.INSTANCE
+								.getState(EcranSalleAttente.ID)).addJoueur(
+								j.getID(), j);
+						break;
+
+				}
 			} catch (SlickException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

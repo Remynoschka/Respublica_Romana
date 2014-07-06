@@ -9,8 +9,9 @@ import org.newdawn.slick.gui.GUIContext;
 
 /**
  * La zone qui affiche toute les lois
+ * 
  * @author Remynoschka
- *
+ * 
  */
 public class PanelLois extends PanelCurieContent {
 
@@ -22,10 +23,9 @@ public class PanelLois extends PanelCurieContent {
 		super(container);
 	}
 
-
 	@Override
 	public void render(GUIContext container, Graphics g) {
-		
+
 	}
 
 }

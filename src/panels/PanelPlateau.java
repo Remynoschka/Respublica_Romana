@@ -21,33 +21,33 @@ import plateau.Rome;
  * 
  */
 public class PanelPlateau extends PanelPrincipal {
-	public static final int LARGEUR_GAUCHE = 75;
-	public static final int LARGEUR_CURIE = 150;
-	public static final int LARGEUR_EVENTS = 100;
+	public static final int	LARGEUR_GAUCHE	= 75;
+	public static final int	LARGEUR_CURIE	= 150;
+	public static final int	LARGEUR_EVENTS	= 100;
 	// Events
-	private Image fond_timer;
-	private Image fond_events;
+	private Image			fond_timer;
+	private Image			fond_events;
 	// Zone gauche
-	private Image icone_tresor;
-	private Image icone_agitation;
-	private Image fond_legions;
-	private Image fond_escadres;
-	private Image fond_veterans;
-	private GroupeBoutons boutonsGauche;
-	private ToggleBouton carte;
-	private ToggleBouton guerres;
-	private ToggleBouton forum;
+	private Image			icone_tresor;
+	private Image			icone_agitation;
+	private Image			fond_legions;
+	private Image			fond_escadres;
+	private Image			fond_veterans;
+	private GroupeBoutons	boutonsGauche;
+	private ToggleBouton	carte;
+	private ToggleBouton	guerres;
+	private ToggleBouton	forum;
 	// Curie
-	private PanelCurie chefs;
-	private PanelCurie senateurs;
-	private PanelCurie concessions;
-	private Image fond_lois;
-	private PanelCurie lois;
+	private PanelCurie		chefs;
+	private PanelCurie		senateurs;
+	private PanelCurie		concessions;
+	private Image			fond_lois;
+	private PanelCurie		lois;
 	// Zone Centrale
-	private ZoneCentrale zoneCentrale;
-	private PanelCarte panelCarte;
-	private PanelGuerres panelGuerre;
-	private PanelForum panelForum;
+	private ZoneCentrale	zoneCentrale;
+	private PanelCarte		panelCarte;
+	private PanelGuerres	panelGuerre;
+	private PanelForum		panelForum;
 
 	public PanelPlateau(GUIContext container, GameState etat)
 			throws SlickException {
@@ -111,21 +111,21 @@ public class PanelPlateau extends PanelPrincipal {
 			public void actionPerformed() {
 				zoneCentrale = panelCarte;
 			}
-		}, "Carte",etat);
+		}, "Carte", etat);
 		guerres = new ToggleBouton(container, 0, getY() + 375, new Action() {
 
 			@Override
 			public void actionPerformed() {
 				zoneCentrale = panelGuerre;
 			}
-		}, "Guerres",etat);
+		}, "Guerres", etat);
 		forum = new ToggleBouton(container, 0, getY() + 450, new Action() {
 
 			@Override
 			public void actionPerformed() {
 				zoneCentrale = panelForum;
 			}
-		}, "Forum",etat);
+		}, "Forum", etat);
 		boutonsGauche.add(carte);
 		boutonsGauche.add(guerres);
 		boutonsGauche.add(forum);

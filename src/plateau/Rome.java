@@ -17,20 +17,41 @@ import cartes.Senateur;
  * 
  */
 public class Rome {
-	public static Rome INSTANCE = null;
-	public static final int REVENU_ETAT_BASE = 100;
-	protected ArmeeReserve armee; // les armees que possede Rome
-	protected int coffre; // le tresor de Rome
-	protected int mecontentement; // le niveau d'agitation sociale
-	protected boolean recrutement; // recrutement possible
-	protected List<Province> provinces; // les provinces de Rome
-	protected Guerres guerres; // les guerres de Rome
-	protected int multiplicateurRI; // valeur du recrutement inefficace
-	protected Forum forum;;// le forum, la ou les cartes vont etre mises
-	protected LoiAgraires loisAgraires;
-	protected Curie curie; // La curie
-	protected Map<Integer, Senateur> senateursAvecTitre;
-	protected int effetsDisette;
+	public static Rome					INSTANCE			= null;
+	public static final int				REVENU_ETAT_BASE	= 100;
+	protected ArmeeReserve				armee;						// les
+																	// armees
+																	// que
+																	// possede
+																	// Rome
+	protected int						coffre;					// le tresor
+																	// de Rome
+	protected int						mecontentement;			// le niveau
+																	// d'agitation
+																	// sociale
+	protected boolean					recrutement;				// recrutement
+																	// possible
+	protected List<Province>			provinces;					// les
+																	// provinces
+																	// de Rome
+	protected Guerres					guerres;					// les
+																	// guerres
+																	// de Rome
+	protected int						multiplicateurRI;			// valeur du
+																	// recrutement
+																	// inefficace
+	protected Forum						forum;						;// le
+																		// forum,
+																		// la ou
+																		// les
+																		// cartes
+																		// vont
+																		// etre
+																		// mises
+	protected LoiAgraires				loisAgraires;
+	protected Curie						curie;						// La curie
+	protected Map<Integer, Senateur>	senateursAvecTitre;
+	protected int						effetsDisette;
 
 	// -------------------------------------------------------------------------
 
@@ -42,7 +63,7 @@ public class Rome {
 						.getVal())
 				| scenar.getVal() == (Ere.HAUTE_REPUBLIQUE.getVal()
 						| Ere.MOYENNE_REPUBLIQUE.getVal() | Ere.BASSE_REPUBLIQUE
-						.getVal())) {
+							.getVal())) {
 			armee = new ArmeeReserve(this, 4);
 			// MOYENNE REPUBLIQUE
 		} else if (scenar.getVal() == Ere.MOYENNE_REPUBLIQUE.getVal()

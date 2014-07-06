@@ -14,14 +14,16 @@ public class NomTropCourtException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1497690018407391029L;
+	private static final long	serialVersionUID	= 1497690018407391029L;
 
 	public NomTropCourtException() {
 		if (Main.debug)
 			System.err.println("Le nom est trop court");
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Throwable#getMessage()
 	 */
 	@Override

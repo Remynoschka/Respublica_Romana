@@ -10,7 +10,7 @@ import Actions.Action;
  * 
  */
 public class Censeur extends Titre {
-	public static final Censeur INSTANCE = new Censeur();
+	public static final Censeur	INSTANCE	= new Censeur();
 
 	protected Censeur() {
 		super("Censeur", 4, 5, new String[] { "1 Procès majeur", "ou",

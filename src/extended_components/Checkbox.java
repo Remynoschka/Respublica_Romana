@@ -17,13 +17,13 @@ import org.newdawn.slick.state.GameState;
  * 
  */
 public class Checkbox extends BoutonGroupable {
-	private static Image unchecked;
-	private static Image checked;
-	private int emplacement_texte;
-	public static final int TEXT_UP = 0;
-	public static final int TEXT_RIGHT = 1;
-	public static final int TEXT_LEFT = 2;
-	public static final int TEXT_DOWN = 3;
+	private static Image	unchecked;
+	private static Image	checked;
+	private int				emplacement_texte;
+	public static final int	TEXT_UP		= 0;
+	public static final int	TEXT_RIGHT	= 1;
+	public static final int	TEXT_LEFT	= 2;
+	public static final int	TEXT_DOWN	= 3;
 
 	/**
 	 * @param container
@@ -103,26 +103,30 @@ public class Checkbox extends BoutonGroupable {
 		super.render(container, g);
 		g.setColor(new Color(0, 0, 0));
 		switch (emplacement_texte) {
-		case TEXT_RIGHT:
-			g.drawString(text, (float) (this.getX() + getWidth() + 10),
-					this.getY() + getHeight() / 2 - g.getFont().getHeight(text)
-							/ 2);
-			break;
-		case TEXT_LEFT:
-			g.drawString(text, (float) (this.getX()
-					- g.getFont().getWidth(text) - 10), this.getY()
-					+ getHeight() / 2 - g.getFont().getHeight(text) / 2);
-			break;
-		case TEXT_UP:
-			g.drawString(text, (float) (this.getX() + getWidth() / 2 - g
-					.getFont().getWidth(text) / 2), this.getY()
-					- g.getFont().getHeight(text) - 5);
-			break;
-		case TEXT_DOWN:
-			g.drawString(text, (float) (this.getX() + getWidth() / 2 - g
-					.getFont().getWidth(text) / 2), this.getY() + getHeight()
-					+ 5);
-			break;
+			case TEXT_RIGHT:
+				g.drawString(
+						text,
+						(float) (this.getX() + getWidth() + 10),
+						this.getY() + getHeight() / 2
+								- g.getFont().getHeight(text) / 2);
+				break;
+			case TEXT_LEFT:
+				g.drawString(
+						text,
+						(float) (this.getX() - g.getFont().getWidth(text) - 10),
+						this.getY() + getHeight() / 2
+								- g.getFont().getHeight(text) / 2);
+				break;
+			case TEXT_UP:
+				g.drawString(text, (float) (this.getX() + getWidth() / 2 - g
+						.getFont().getWidth(text) / 2), this.getY()
+						- g.getFont().getHeight(text) - 5);
+				break;
+			case TEXT_DOWN:
+				g.drawString(text, (float) (this.getX() + getWidth() / 2 - g
+						.getFont().getWidth(text) / 2), this.getY()
+						+ getHeight() + 5);
+				break;
 		}
 
 	}

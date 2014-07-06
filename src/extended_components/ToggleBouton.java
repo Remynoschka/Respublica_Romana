@@ -18,10 +18,10 @@ import Actions.Action;
  * 
  */
 public class ToggleBouton extends BoutonGroupable {
-	private Image normal;
-	private Image hover;
-	private Image clicked;
-	private boolean pressed;
+	private Image	normal;
+	private Image	hover;
+	private Image	clicked;
+	private boolean	pressed;
 
 	public ToggleBouton(GUIContext container, int x, int y, GameState etat)
 			throws SlickException {

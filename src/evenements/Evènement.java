@@ -1,10 +1,11 @@
 package evenements;
 
 public abstract class Evènement {
-	protected int id;
-	protected EffetEvent premierEffet;
-	protected EffetEvent secondEffet;
-	protected int countEvent; // le nombre de fois que cet event est tombe
+	protected int			id;
+	protected EffetEvent	premierEffet;
+	protected EffetEvent	secondEffet;
+	protected int			countEvent;	// le nombre de fois que cet event
+											// est tombe
 
 	/**
 	 * Applique les effets de l'evenements (ou les aggraves)

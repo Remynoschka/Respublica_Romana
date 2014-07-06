@@ -13,8 +13,8 @@ import jeu.Ere;
  * 
  */
 public class TasCartes {
-	private List<Carte> cartes;
-	private Iterator<Carte> iterator;
+	private List<Carte>		cartes;
+	private Iterator<Carte>	iterator;
 
 	/**
 	 * Creation d'un nouveau tas de cartes

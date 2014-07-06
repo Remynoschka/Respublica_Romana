@@ -14,7 +14,7 @@ import evenements.Evenement;
  * 
  */
 public class PhaseForum implements PhaseJeu {
-	public static final PhaseForum INSTANCE = new PhaseForum();
+	public static final PhaseForum	INSTANCE	= new PhaseForum();
 
 	@Override
 	public void jouer() {
@@ -23,13 +23,13 @@ public class PhaseForum implements PhaseJeu {
 			e.reinit();
 		}
 		// Initiative
-		
+
 		// Mettre de l'ordre
-		for (Senateur s : Rome.INSTANCE.getSenateursAvecTitre().values()){
+		for (Senateur s : Rome.INSTANCE.getSenateursAvecTitre().values()) {
 			s.setMajeur();
 		}
 		// jets de concessions detruites
-		
+
 		// mettre l'ordre a la curie
 		Rome.INSTANCE.getCurie().mettreOrdre();
 	}

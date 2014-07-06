@@ -13,11 +13,11 @@ import Actions.Action;
  * 
  */
 public class OuiNonPopup extends Popup {
-	private Bouton oui;
-	private Bouton non;
-	public static final int OUI = 0;
-	public static final int NON = 1;
-	private int closeValue;
+	private Bouton			oui;
+	private Bouton			non;
+	public static final int	OUI	= 0;
+	public static final int	NON	= 1;
+	private int				closeValue;
 
 	/**
 	 * @param titre
@@ -54,7 +54,7 @@ public class OuiNonPopup extends Popup {
 	@Override
 	public void render(GUIContext container, Graphics g) {
 		super.render(container, g);
-		if (visible){
+		if (visible) {
 			oui.render(container, g);
 			non.render(container, g);
 		}

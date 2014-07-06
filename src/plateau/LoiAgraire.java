@@ -10,12 +10,12 @@ package plateau;
  * 
  */
 public class LoiAgraire {
-	protected int couts;
-	protected boolean estActive = false;
-	protected int modificateurMecontentement;
-	protected int initiateur;
-	protected int coinitiateur;
-	protected int opposant;
+	protected int		couts;
+	protected boolean	estActive	= false;
+	protected int		modificateurMecontentement;
+	protected int		initiateur;
+	protected int		coinitiateur;
+	protected int		opposant;
 
 	/**
 	 * 

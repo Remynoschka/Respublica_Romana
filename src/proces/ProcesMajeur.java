@@ -7,7 +7,7 @@ import cartes.Senateur;
 
 /**
  * @author Remynoschka
- *
+ * 
  */
 public class ProcesMajeur extends Proces {
 
@@ -20,7 +20,9 @@ public class ProcesMajeur extends Proces {
 		// TODO Auto-generated constructor stub
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see proces.Proces#consequenceProces()
 	 */
 	@Override

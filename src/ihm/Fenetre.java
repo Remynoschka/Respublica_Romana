@@ -19,10 +19,15 @@ import extended_components.Popup;
  * @author Remynoschka
  */
 public class Fenetre extends AppGameContainer {
-	public static Fenetre FENETRE;
-	private boolean popupActive;// moche mais sinon faut tout refaire
-	public static final ConfigMonitors config = ConfigMonitors
-			.getConfiguration();
+	public static Fenetre				FENETRE;
+	private boolean						popupActive;							// moche
+																				// mais
+																				// sinon
+																				// faut
+																				// tout
+																				// refaire
+	public static final ConfigMonitors	config	= ConfigMonitors
+														.getConfiguration();
 
 	/**
 	 * Creates new form Fenetre
@@ -48,8 +53,8 @@ public class Fenetre extends AppGameContainer {
 	public boolean hasPopupActive() {
 		return popupActive;
 	}
-	
-	public void setPopupActive(boolean val){
+
+	public void setPopupActive(boolean val) {
 		popupActive = val;
 	}
 

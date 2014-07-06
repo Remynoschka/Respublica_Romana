@@ -14,7 +14,7 @@ public class FormatAdresseIPException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3877041855275697500L;
+	private static final long	serialVersionUID	= 3877041855275697500L;
 
 	public FormatAdresseIPException() {
 		if (Main.debug)

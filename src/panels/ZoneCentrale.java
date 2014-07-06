@@ -14,8 +14,7 @@ import org.newdawn.slick.gui.MouseOverArea;
  */
 public abstract class ZoneCentrale extends MouseOverArea {
 
-	public ZoneCentrale(GUIContext container)
-			throws SlickException {
+	public ZoneCentrale(GUIContext container) throws SlickException {
 		super(container, new Image(0, 0), PanelPlateau.LARGEUR_GAUCHE,
 				PanelInfosFaction.HAUTEUR_BANDEAU, container.getWidth()
 						- PanelInfosFaction.LARGEUR

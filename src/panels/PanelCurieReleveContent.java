@@ -13,7 +13,7 @@ public class PanelCurieReleveContent extends PanelCurieContent {
 	@Override
 	public void render(GUIContext container, Graphics g) {
 		fond.draw(getX(), getY(), getWidth(), getHeight());
-		//TODO afficher les senateurs a la curie
+		// TODO afficher les senateurs a la curie
 	}
 
 }

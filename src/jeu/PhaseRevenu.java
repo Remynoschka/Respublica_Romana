@@ -12,7 +12,7 @@ import joueurs.Joueur;
  * 
  */
 public class PhaseRevenu implements PhaseJeu {
-	public static final PhaseRevenu INSTANCE = new PhaseRevenu();
+	public static final PhaseRevenu	INSTANCE	= new PhaseRevenu();
 
 	private PhaseRevenu() {
 

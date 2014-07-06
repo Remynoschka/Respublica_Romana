@@ -31,18 +31,18 @@ import extended_components.Ecran;
  * 
  */
 public class EcranRejoindrePartie extends Ecran {
-	public static final int ID = 2;
-	private ChampTexte ip;
-	private ChampTexte pseudo;
-	private Bouton rejoindre;
-	private Bouton annuler;
-	private Image fond;
-	private boolean error = false;
-	private String errorMsg = "";
-	public static final String IP_REGEX = "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
-			+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
-			+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
-			+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
+	public static final int		ID			= 2;
+	private ChampTexte			ip;
+	private ChampTexte			pseudo;
+	private Bouton				rejoindre;
+	private Bouton				annuler;
+	private Image				fond;
+	private boolean				error		= false;
+	private String				errorMsg	= "";
+	public static final String	IP_REGEX	= "^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
+													+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
+													+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\."
+													+ "([01]?\\d\\d?|2[0-4]\\d|25[0-5])$";
 
 	/**
 	 * 
@@ -112,7 +112,7 @@ public class EcranRejoindrePartie extends Ecran {
 						}
 					}
 				}, this, Bouton.KEY_ENTER);
-		
+
 		annuler = Bouton.createBouton(container,
 				Fenetre.FENETRE.getWidth() / 2 - 280,
 				Fenetre.FENETRE.getHeight() / 2 - 50, "Annuler", new Action() {

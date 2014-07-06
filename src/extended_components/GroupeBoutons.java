@@ -10,13 +10,13 @@ import java.util.List;
  * 
  */
 public class GroupeBoutons {
-	private List<BoutonGroupable> boutons;
-	
-	public GroupeBoutons(){
+	private List<BoutonGroupable>	boutons;
+
+	public GroupeBoutons() {
 		boutons = new ArrayList<BoutonGroupable>();
 	}
-	
-	public GroupeBoutons(List<BoutonGroupable> liste){
+
+	public GroupeBoutons(List<BoutonGroupable> liste) {
 		this.boutons = liste;
 	}
 

@@ -30,13 +30,13 @@ import extended_components.Ecran;
  * 
  */
 public class EcranDemandeNom extends Ecran {
-	public static final int ID = 4;
-	private ChampTexte pseudo;
-	private Bouton ok;
-	private Bouton annuler;
-	private Image fond;
-	private boolean warningNameLength = false;
-	private String errMsg = "";
+	public static final int	ID					= 4;
+	private ChampTexte		pseudo;
+	private Bouton			ok;
+	private Bouton			annuler;
+	private Image			fond;
+	private boolean			warningNameLength	= false;
+	private String			errMsg				= "";
 
 	/**
 	 * 
@@ -76,7 +76,8 @@ public class EcranDemandeNom extends Ecran {
 							}
 						else {
 							// Creer le joueur qui est moi
-							Jeu.INSTANCE.setPlayerMe(new Joueur(pseudo.getText()));
+							Jeu.INSTANCE.setPlayerMe(new Joueur(pseudo
+									.getText()));
 							// Lancer le serveur et passer à l'écran de lobby
 							Action.HEBERGER.actionPerformed();
 							// Ajouter l'host au serveur

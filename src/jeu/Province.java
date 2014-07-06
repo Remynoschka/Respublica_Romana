@@ -6,36 +6,36 @@ import cartes.Senateur;
 import exception.NbDeException;
 
 public class Province {
-	private String nom;
+	private String		nom;
 
-	private int forceT;
-	private int forceM;
+	private int			forceT;
+	private int			forceM;
 
-	private int armee;
-	private int escadres;
+	private int			armee;
+	private int			escadres;
 
-	private int mandat;
+	private int			mandat;
 
-	private boolean developpe;
-	private Senateur gouverneur;
+	private boolean		developpe;
+	private Senateur	gouverneur;
 
-	private int deSpoilNormal; // nb de de
-	private int deSpoilDev; // nb de de
-	private int bonusSpoilNormal;
-	private int bonusSpoilDev;
+	private int			deSpoilNormal;		// nb de de
+	private int			deSpoilDev;		// nb de de
+	private int			bonusSpoilNormal;
+	private int			bonusSpoilDev;
 
-	private boolean spoliee;
+	private boolean		spoliee;
 
-	private int deEtatNormal; // nb de de
-	private int deEtatDev; // nb de de
-	private int bonusEtatNormal;
-	private int bonusEtatDev;
+	private int			deEtatNormal;		// nb de de
+	private int			deEtatDev;			// nb de de
+	private int			bonusEtatNormal;
+	private int			bonusEtatDev;
 
-	private CarteGuerre guerreCreatrice;
+	private CarteGuerre	guerreCreatrice;
 
 	// ----
-	private int impotsLocaux;
-	private boolean frontalier;
+	private int			impotsLocaux;
+	private boolean		frontalier;
 
 	// ------------------------------------------------------------------------
 

@@ -17,13 +17,13 @@ import org.newdawn.slick.gui.MouseOverArea;
  * 
  */
 public class PanelInfosFaction extends MouseOverArea {
-	public static final int LARGEUR = 250;
-	public static final int HAUTEUR_BANDEAU = 130;
-	public static final int HAUTEUR_IMAGE = 70;
-	private static final Color COULEUR_NOM = new Color(215, 160, 75);
-	private Image bandeauRouge;
-	private Image bois;
-	private Image iconeTresor;
+	public static final int		LARGEUR			= 250;
+	public static final int		HAUTEUR_BANDEAU	= 130;
+	public static final int		HAUTEUR_IMAGE	= 70;
+	private static final Color	COULEUR_NOM		= new Color(215, 160, 75);
+	private Image				bandeauRouge;
+	private Image				bois;
+	private Image				iconeTresor;
 
 	public PanelInfosFaction(GUIContext container, int x, int y)
 			throws SlickException {
@@ -42,24 +42,41 @@ public class PanelInfosFaction extends MouseOverArea {
 				- HAUTEUR_BANDEAU);
 
 		// Symbole
-		Jeu.INSTANCE.getPlayerMe().getSymbole().draw(getX() + LARGEUR / 2 - HAUTEUR_IMAGE / 2,
-				20, HAUTEUR_IMAGE, HAUTEUR_IMAGE);
+		Jeu.INSTANCE
+				.getPlayerMe()
+				.getSymbole()
+				.draw(getX() + LARGEUR / 2 - HAUTEUR_IMAGE / 2, 20,
+						HAUTEUR_IMAGE, HAUTEUR_IMAGE);
 		// Nom joueur
 		g.setColor(COULEUR_NOM);
-		g.drawString(Jeu.INSTANCE.getPlayerMe().getNom().toUpperCase(), getX() + LARGEUR / 2
-				- g.getFont().getWidth(Jeu.INSTANCE.getPlayerMe().getNom().toUpperCase()) / 2,
-				HAUTEUR_IMAGE + 30);
+		g.drawString(
+				Jeu.INSTANCE.getPlayerMe().getNom().toUpperCase(),
+				getX()
+						+ LARGEUR
+						/ 2
+						- g.getFont().getWidth(
+								Jeu.INSTANCE.getPlayerMe().getNom()
+										.toUpperCase()) / 2, HAUTEUR_IMAGE + 30);
 		// Tresorerie
 		g.setColor(new Color(255, 255, 255));
-		g.drawString("" + Jeu.INSTANCE.getPlayerMe().getArgentCoffre(), getX() + LARGEUR / 2
-				- g.getFont().getWidth("" + Jeu.INSTANCE.getPlayerMe().getArgentCoffre()) / 2,
+		g.drawString(
+				"" + Jeu.INSTANCE.getPlayerMe().getArgentCoffre(),
+				getX()
+						+ LARGEUR
+						/ 2
+						- g.getFont().getWidth(
+								""
+										+ Jeu.INSTANCE.getPlayerMe()
+												.getArgentCoffre()) / 2,
 				HAUTEUR_IMAGE + 80);
 		iconeTresor.draw(
 				getX()
 						+ LARGEUR
 						/ 2
 						+ g.getFont().getWidth(
-								"" + Jeu.INSTANCE.getPlayerMe().getArgentCoffre()) + 10,
+								""
+										+ Jeu.INSTANCE.getPlayerMe()
+												.getArgentCoffre()) + 10,
 				HAUTEUR_IMAGE + 80, 20, 20);
 		// Compteur de voix total
 		g.drawString(
@@ -68,10 +85,12 @@ public class PanelInfosFaction extends MouseOverArea {
 						+ LARGEUR
 						/ 2
 						- g.getFont().getWidth(
-								"Total voix : " + Jeu.INSTANCE.getPlayerMe().getNbVoix()) / 2,
+								"Total voix : "
+										+ Jeu.INSTANCE.getPlayerMe()
+												.getNbVoix()) / 2,
 				HAUTEUR_IMAGE + 120);
 		// Boutons d'action
-		//TODO ajouter les boutons d'action
+		// TODO ajouter les boutons d'action
 	}
 
 }

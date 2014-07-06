@@ -24,19 +24,19 @@ import Actions.Action;
  * @author Remynoschka
  */
 public class Bouton extends Components {
-	protected String texte = "";
-	protected Action action;
-	protected int mnemonic = -1;
-	public static final int KEY_ENTER = 28;
-	protected static Image bouton;
-	protected static Image boutonHover;
-	protected static Image boutonOnClick;
-	protected static Image boutonX;
-	protected static Image boutonXHover;
-	protected static Image boutonXOnClick;
+	protected String		texte		= "";
+	protected Action		action;
+	protected int			mnemonic	= -1;
+	public static final int	KEY_ENTER	= 28;
+	protected static Image	bouton;
+	protected static Image	boutonHover;
+	protected static Image	boutonOnClick;
+	protected static Image	boutonX;
+	protected static Image	boutonXHover;
+	protected static Image	boutonXOnClick;
 
-	public static final int WIDTH = 100;
-	public static final int HEIGHT = 100;
+	public static final int	WIDTH		= 100;
+	public static final int	HEIGHT		= 100;
 
 	// CONSTRUCTEURS
 	/**

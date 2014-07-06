@@ -7,7 +7,7 @@ public enum Ere {
 		this.val = val;
 	}
 
-	private int val;
+	private int	val;
 
 	public int getVal() {
 		return val;

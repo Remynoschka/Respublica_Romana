@@ -16,17 +16,17 @@ import org.newdawn.slick.gui.MouseOverArea;
  * 
  */
 public class LobbyPlayerDisplay extends MouseOverArea {
-	private Joueur joueur;
-	public static final int HEIGHT = 50;
-	public static final int WIDTH = 400;
+	private Joueur			joueur;
+	public static final int	HEIGHT	= 50;
+	public static final int	WIDTH	= 400;
 
 	public LobbyPlayerDisplay(GUIContext container, Joueur joueur)
 			throws SlickException {
-		super(container, null,
-				(int) (container.getWidth() / 2 - WIDTH / 2), 0, WIDTH, HEIGHT);
+		super(container, null, (int) (container.getWidth() / 2 - WIDTH / 2), 0,
+				WIDTH, HEIGHT);
 		this.joueur = joueur;
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -43,8 +43,8 @@ public class LobbyPlayerDisplay extends MouseOverArea {
 		g.drawImage(joueur.getSymbole().getScaledCopy(HEIGHT, HEIGHT), getX()
 				+ WIDTH, getY());
 	}
-	
-	public Joueur getJoueur(){
+
+	public Joueur getJoueur() {
 		return this.joueur;
 	}
 

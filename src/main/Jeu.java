@@ -31,11 +31,11 @@ import extended_components.Bouton;
 import extended_components.Checkbox;
 
 public class Jeu extends StateBasedGame {
-	public static final Jeu INSTANCE = new Jeu();
-	private Joueur joueurMoi;
-	public static UnicodeFont FONT;
-	public static UnicodeFont LOW_FONT;
-	public static final ColorEffect COLOR_EFFECT = new ColorEffect();
+	public static final Jeu			INSTANCE		= new Jeu();
+	private Joueur					joueurMoi;
+	public static UnicodeFont		FONT;
+	public static UnicodeFont		LOW_FONT;
+	public static final ColorEffect	COLOR_EFFECT	= new ColorEffect();
 
 	private Jeu() {
 		super("Respublica Romana");
@@ -79,7 +79,7 @@ public class Jeu extends StateBasedGame {
 	private void testsLaunch() throws SlickException,
 			SenateurDejaOccupeException {
 		Partie.nouvellePartie(Ere.HAUTE_REPUBLIQUE);
-		joueurMoi = new Joueur(1,"JP", null, new Image(
+		joueurMoi = new Joueur(1, "JP", null, new Image(
 				"./data/images/symboles/factions/aigle.png"));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(joueurMoi);
 
@@ -106,23 +106,23 @@ public class Jeu extends StateBasedGame {
 								return null;
 							}
 						});
-		Joueur djeff = new Joueur(2,"Djeff", null, new Image(
+		Joueur djeff = new Joueur(2, "Djeff", null, new Image(
 				"./data/images/symboles/factions/main.png"));
 		djeff.addSenateur(new Senateur("12", "Acilius", Ere.HAUTE_REPUBLIQUE, 2));
 		djeff.addSenateur(new HommeEtat("2a",
 				"Q. Fabius Maximus Verrucosus Cunctator", Ere.HAUTE_REPUBLIQUE,
 				2));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(djeff);
-		Joueur upsie = new Joueur(3,"Upsie", null, new Image(
+		Joueur upsie = new Joueur(3, "Upsie", null, new Image(
 				"./data/images/symboles/factions/etoile.png"));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(upsie);
-		Joueur panpan = new Joueur(4,"Panpan", null, new Image(
+		Joueur panpan = new Joueur(4, "Panpan", null, new Image(
 				"./data/images/symboles/factions/couronne.png"));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(panpan);
-		Joueur cedric = new Joueur(5,"Cedric", null, new Image(
+		Joueur cedric = new Joueur(5, "Cedric", null, new Image(
 				"./data/images/symboles/factions/rond.png"));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(cedric);
-		Joueur mout = new Joueur(6,"Mout", null, new Image(
+		Joueur mout = new Joueur(6, "Mout", null, new Image(
 				"./data/images/symboles/factions/Lune.png"));
 		Partie.PARTIE_EN_COURS.getJoueurs().add(mout);
 	}

@@ -12,8 +12,8 @@ import cartes.Senateur;
  * 
  */
 public class PhaseSenat implements PhaseJeu {
-	public static final PhaseSenat INSTANCE = new PhaseSenat();
-	private Senateur presidentSeance;
+	public static final PhaseSenat	INSTANCE	= new PhaseSenat();
+	private Senateur				presidentSeance;
 
 	private PhaseSenat() {
 

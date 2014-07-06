@@ -12,9 +12,9 @@ import com.esotericsoftware.kryonet.Server;
  * 
  */
 public class Serveur extends NetworkInterface {
-	public static final Serveur INSTANCE = new Serveur();
-	private Server serveur;
-	private boolean isRunning;
+	public static final Serveur	INSTANCE	= new Serveur();
+	private Server				serveur;
+	private boolean				isRunning;
 
 	private Serveur() {
 		serveur = new Server();

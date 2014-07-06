@@ -14,9 +14,9 @@ package multiplayer;
  * 
  */
 public abstract class NetworkInterface {
-	public static final int PORT_UDP = 20592;
-	public static final int PORT_TCP = 20593;
-	public static final int TIMEOUT = 30000;
+	public static final int	PORT_UDP	= 20592;
+	public static final int	PORT_TCP	= 20593;
+	public static final int	TIMEOUT		= 30000;
 
 	/**
 	 * Enregistre les paquets qui doivent etre enregistres

@@ -16,11 +16,11 @@ import cartes.Senateur;
  * 
  */
 public class PanelSenateur extends MouseOverArea {
-	private Senateur senateur;
-	private boolean mouseInto;
-	public static final int LARGEUR = 100;
-	private InfosSenateur infos;
-	private final Color couleurHE = new Color(115, 52, 60);
+	private Senateur		senateur;
+	private boolean			mouseInto;
+	public static final int	LARGEUR		= 100;
+	private InfosSenateur	infos;
+	private final Color		couleurHE	= new Color(115, 52, 60);
 
 	public PanelSenateur(GUIContext container, int x, int y, Senateur s)
 			throws SlickException {

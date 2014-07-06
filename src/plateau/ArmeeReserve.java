@@ -21,13 +21,16 @@ import jeu.Legion;
  */
 public class ArmeeReserve {
 
-	private Rome rome;
-	private TreeMap<Integer, Legion> legions;
-	private ArrayList<Flotte> flottes;
-	private int dernierNumLegionUtilise;
-	private int dernierNumFlotteUtilise;
-	public static final int PRIX_RECRUTEMENT = 10;
-	private ArrayList<Armee> armees; // les armees sur le terrain
+	private Rome						rome;
+	private TreeMap<Integer, Legion>	legions;
+	private ArrayList<Flotte>			flottes;
+	private int							dernierNumLegionUtilise;
+	private int							dernierNumFlotteUtilise;
+	public static final int				PRIX_RECRUTEMENT	= 10;
+	private ArrayList<Armee>			armees;					// les
+																	// armees
+																	// sur le
+																	// terrain
 
 	// ------------------------------------------------------------------------
 	public ArmeeReserve(Rome rome, int nbLegion) {
@@ -231,20 +234,20 @@ public class ArmeeReserve {
 		flottes.addAll(armee.getFlottes());
 		armee.getChef().desassignerArmee();
 	}
-	
+
 	// -------------------------------------------------------------------------
-	public int getNbLegionsDisponibles(){
+	public int getNbLegionsDisponibles() {
 		return legions.size();
 	}
-	
-	public int getNbEscadresDisponibles(){
+
+	public int getNbEscadresDisponibles() {
 		return flottes.size();
 	}
-	
-	public int getNbVeteransDisponibles(){
+
+	public int getNbVeteransDisponibles() {
 		List<Legion> veterans = new ArrayList<Legion>();
-		for (Legion l : legions.values()){
-			if (l.estVeteran()){
+		for (Legion l : legions.values()) {
+			if (l.estVeteran()) {
 				veterans.add(l);
 			}
 		}

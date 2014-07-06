@@ -11,7 +11,7 @@ import exception.NbDeException;
  * 
  */
 public class De {
-	private static int mauvaisPresage = 0;
+	private static int	mauvaisPresage	= 0;
 
 	/**
 	 * Methodes qui execute un jet de des

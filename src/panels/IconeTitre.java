@@ -20,11 +20,11 @@ import titres.Titre;
  * 
  */
 public class IconeTitre extends MouseOverArea {
-	private boolean mouseInto;
-	private Image icone;
-	private PanelTitreDetail detail;
-	public static final int HAUTEUR_IMAGE = 45;
-	public static final int LARGEUR_IMAGE = 17;
+	private boolean				mouseInto;
+	private Image				icone;
+	private PanelTitreDetail	detail;
+	public static final int		HAUTEUR_IMAGE	= 45;
+	public static final int		LARGEUR_IMAGE	= 17;
 
 	/**
 	 * 
@@ -58,7 +58,7 @@ public class IconeTitre extends MouseOverArea {
 
 	public void render(GUIContext container, Graphics g, int x, int y) {
 		setX(x);
-		setY(y-10);
+		setY(y - 10);
 		super.render(container, g);
 		icone.draw(getX(), getY(), LARGEUR_IMAGE, HAUTEUR_IMAGE);
 		g.setColor(new Color(215, 160, 75));

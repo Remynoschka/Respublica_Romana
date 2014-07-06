@@ -14,7 +14,7 @@ import exception.NbDeException;
  */
 public class ConcessionsDetruites {
 
-	private List<Concession> concessions;
+	private List<Concession>	concessions;
 
 	/**
 	 * Remets les concessions au Forum

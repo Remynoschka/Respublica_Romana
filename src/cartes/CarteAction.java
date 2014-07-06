@@ -15,7 +15,7 @@ public abstract class CarteAction extends Carte {
 		construct();
 	}
 
-	private Action action;
+	private Action	action;
 
 	/**
 	 * @return the action

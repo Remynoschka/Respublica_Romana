@@ -18,38 +18,42 @@ public abstract class Action {
 	 */
 	public abstract void actionPerformed();
 
-	public static final Action QUITTER = new Action() {
+	public static final Action	QUITTER		= new Action() {
 
-		@Override
-		public void actionPerformed() {
-			Fenetre.FENETRE.exit();
-		}
-	};
+												@Override
+												public void actionPerformed() {
+													Fenetre.FENETRE.exit();
+												}
+											};
 
-	public static final Action REJOINDRE = new Action() {
+	public static final Action	REJOINDRE	= new Action() {
 
-		@Override
-		public void actionPerformed() {
-			Fenetre.FENETRE.changerVueActuelle(EcranRejoindrePartie.ID);
-		}
-	};
+												@Override
+												public void actionPerformed() {
+													Fenetre.FENETRE
+															.changerVueActuelle(EcranRejoindrePartie.ID);
+												}
+											};
 
-	public static final Action HEBERGER = new Action() {
+	public static final Action	HEBERGER	= new Action() {
 
-		@Override
-		public void actionPerformed() {
-			Serveur.INSTANCE.start();
-			((EcranSalleAttente) Jeu.INSTANCE.getState(EcranSalleAttente.ID))
-					.setHost();
-			Fenetre.FENETRE.changerVueActuelle(EcranSalleAttente.ID);
-		}
-	};
+												@Override
+												public void actionPerformed() {
+													Serveur.INSTANCE.start();
+													((EcranSalleAttente) Jeu.INSTANCE
+															.getState(EcranSalleAttente.ID))
+															.setHost();
+													Fenetre.FENETRE
+															.changerVueActuelle(EcranSalleAttente.ID);
+												}
+											};
 
-	public static final Action CONNECTER = new Action() {
+	public static final Action	CONNECTER	= new Action() {
 
-		@Override
-		public void actionPerformed() {
-			Fenetre.FENETRE.changerVueActuelle(EcranSalleAttente.ID);
-		}
-	};
+												@Override
+												public void actionPerformed() {
+													Fenetre.FENETRE
+															.changerVueActuelle(EcranSalleAttente.ID);
+												}
+											};
 }

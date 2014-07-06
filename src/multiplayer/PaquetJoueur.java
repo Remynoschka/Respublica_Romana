@@ -8,10 +8,10 @@ package multiplayer;
  * 
  */
 public class PaquetJoueur extends PaquetReseau {
-	private int ID;
-	private String name;
-	private String symboleName;
-	private int talentsCoffre;
+	private int		ID;
+	private String	name;
+	private String	symboleName;
+	private int		talentsCoffre;
 
 	/**
 	 * @return the ID

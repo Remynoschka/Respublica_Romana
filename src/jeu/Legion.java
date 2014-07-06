@@ -9,9 +9,9 @@ import cartes.Senateur;
  * 
  */
 public class Legion {
-	private int numLegion;
-	private boolean veteran;
-	private Senateur allegence; // le senateur qui controle cette legion
+	private int			numLegion;
+	private boolean		veteran;
+	private Senateur	allegence;	// le senateur qui controle cette legion
 
 	public Legion(int num) {
 		numLegion = num;
@@ -36,10 +36,11 @@ public class Legion {
 		} else
 			return true;
 	}
+
 	/**
 	 * La legion ne voues plus allegence a un senateur
 	 */
-	public void perdAllegence(){		
+	public void perdAllegence() {
 		this.allegence = null;
 	}
 

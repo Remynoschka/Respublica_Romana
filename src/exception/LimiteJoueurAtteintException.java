@@ -14,7 +14,7 @@ public class LimiteJoueurAtteintException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8424238110039722200L;
+	private static final long	serialVersionUID	= -8424238110039722200L;
 
 	/**
 	 * 
@@ -23,8 +23,10 @@ public class LimiteJoueurAtteintException extends Exception {
 		if (Main.debug)
 			System.err.println("Nombre de joueurs limite atteint");
 	}
-	
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Throwable#getMessage()
 	 */
 	@Override

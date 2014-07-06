@@ -9,11 +9,12 @@ import plateau.TableEtatRepublique;
 
 /**
  * Classe simulant la phase de plebe
+ * 
  * @author Remynoschka
  * 
  */
 public class PhasePlebe implements PhaseJeu {
-	public static final PhasePlebe INSTANCE = new PhasePlebe();
+	public static final PhasePlebe	INSTANCE	= new PhasePlebe();
 
 	private PhasePlebe() {
 

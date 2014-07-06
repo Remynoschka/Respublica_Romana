@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LoiAgraires {
 
-	protected List<LoiAgraire> lois;
+	protected List<LoiAgraire>	lois;
 
 	public LoiAgraires() {
 		lois = new ArrayList<LoiAgraire>();

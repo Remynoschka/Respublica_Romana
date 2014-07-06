@@ -3,8 +3,8 @@ package evenements;
 import org.newdawn.slick.Image;
 
 public abstract class EffetEvent {
-	protected String description;
-	protected Image icone;
+	protected String	description;
+	protected Image		icone;
 
 	public EffetEvent(String description, Image icone) {
 		this.description = description;

@@ -21,10 +21,10 @@ public class HommeEtat extends Senateur {
 		frereAmi = new ArrayList<Senateur>();
 	}
 
-	private List<Senateur> frereEnnemi;
-	private List<Senateur> frereAmi;
+	private List<Senateur>	frereEnnemi;
+	private List<Senateur>	frereAmi;
 	// Pouvoir
-	private Action pouvoir;
+	private Action			pouvoir;
 
 	public boolean estHommeEtat() {
 		return true;

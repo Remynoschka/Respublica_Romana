@@ -25,11 +25,11 @@ import extended_components.Ecran;
  * 
  */
 public class EcranPrincipal extends Ecran {
-	public static final int ID = 1;
-	private PanelInfosFaction infosFaction;
-	private PanelSenateurs senateurs;
-	private List<PanelAutreJoueur> autresJoueurs;
-	private PanelPlateau plateau;
+	public static final int			ID	= 1;
+	private PanelInfosFaction		infosFaction;
+	private PanelSenateurs			senateurs;
+	private List<PanelAutreJoueur>	autresJoueurs;
+	private PanelPlateau			plateau;
 
 	/**
 	 * 
@@ -48,16 +48,15 @@ public class EcranPrincipal extends Ecran {
 		for (Joueur p : Partie.PARTIE_EN_COURS.getJoueurs()) {
 			if (p != Jeu.INSTANCE.getPlayerMe()) {
 				autresJoueurs.add(new PanelAutreJoueur(Fenetre.FENETRE, x, 20,
-						p,this));
+						p, this));
 				x += 200;
 			}
 		}
 		senateurs = new PanelSenateurs(container, 0, container.getHeight()
 				- PanelSenateurs.HAUTEUR, container.getWidth()
 				- PanelInfosFaction.LARGEUR);
-		plateau = new PanelPlateau(container,this);
+		plateau = new PanelPlateau(container, this);
 
-		
 	}
 
 	@Override
@@ -85,22 +84,26 @@ public class EcranPrincipal extends Ecran {
 		return ID;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ihm.Ecran#enterBehaviour()
 	 */
 	@Override
 	public void enterBehaviour() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see ihm.Ecran#leaveBehaviour()
 	 */
 	@Override
 	public void leaveBehaviour() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

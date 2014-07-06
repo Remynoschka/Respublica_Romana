@@ -15,11 +15,11 @@ import jeu.Ere;
  * 
  */
 public class TableEvents {
-	public static final TableEvents HAUTE_REPUBLIQUE = constructTableHR();
-	public static final TableEvents MOYENNE_REPUBLIQUE = constructTableMR();
-	public static final TableEvents BASSE_REPUBLIQUE = constructTableBR();
+	public static final TableEvents	HAUTE_REPUBLIQUE	= constructTableHR();
+	public static final TableEvents	MOYENNE_REPUBLIQUE	= constructTableMR();
+	public static final TableEvents	BASSE_REPUBLIQUE	= constructTableBR();
 
-	private Map<Integer, Evenement> table;
+	private Map<Integer, Evenement>	table;
 
 	public TableEvents() {
 		table = new HashMap<Integer, Evenement>();
@@ -46,15 +46,15 @@ public class TableEvents {
 	public static Evenement getEvent(int de, Ere ere) {
 		Evenement evt = null;
 		switch (ere) {
-		case HAUTE_REPUBLIQUE:
-			evt = HAUTE_REPUBLIQUE.table.get(de);
-			break;
-		case MOYENNE_REPUBLIQUE:
-			evt = MOYENNE_REPUBLIQUE.table.get(de);
-			break;
-		case BASSE_REPUBLIQUE:
-			evt = BASSE_REPUBLIQUE.table.get(de);
-			break;
+			case HAUTE_REPUBLIQUE:
+				evt = HAUTE_REPUBLIQUE.table.get(de);
+				break;
+			case MOYENNE_REPUBLIQUE:
+				evt = MOYENNE_REPUBLIQUE.table.get(de);
+				break;
+			case BASSE_REPUBLIQUE:
+				evt = BASSE_REPUBLIQUE.table.get(de);
+				break;
 		}
 		return evt;
 	}

@@ -14,7 +14,7 @@ import Actions.Action;
  * 
  */
 public class OkPopup extends Popup {
-	private Bouton ok;
+	private Bouton	ok;
 
 	/**
 	 * @param titre
@@ -32,7 +32,6 @@ public class OkPopup extends Popup {
 			}
 		}, conteneur, Keyboard.KEY_NUMPADENTER);
 	}
-	
 
 	/*
 	 * (non-Javadoc)

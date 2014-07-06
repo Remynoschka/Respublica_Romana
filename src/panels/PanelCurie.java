@@ -15,9 +15,9 @@ import org.newdawn.slick.gui.MouseOverArea;
  * 
  */
 public class PanelCurie extends MouseOverArea {
-	private PanelCurieContent content;
-	private boolean mouseInto;
-	private Image fond;
+	private PanelCurieContent	content;
+	private boolean				mouseInto;
+	private Image				fond;
 
 	public PanelCurie(GUIContext container, int x, int y, Image fond,
 			PanelCurieContent content) throws SlickException {
@@ -25,7 +25,7 @@ public class PanelCurie extends MouseOverArea {
 		this.fond = fond;
 		this.content = content;
 	}
-	
+
 	public PanelCurie(GUIContext container, int x, int y, Image fond,
 			PanelCurieContent content, int h) throws SlickException {
 		super(container, new Image(0, 0), x, y, PanelPlateau.LARGEUR_CURIE, h);

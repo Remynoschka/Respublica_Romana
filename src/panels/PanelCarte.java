@@ -16,7 +16,7 @@ import org.newdawn.slick.gui.GUIContext;
  * 
  */
 public class PanelCarte extends ZoneCentrale {
-	private Image carte;
+	private Image	carte;
 
 	/**
 	 * @param container

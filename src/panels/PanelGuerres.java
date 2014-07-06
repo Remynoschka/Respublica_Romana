@@ -17,10 +17,10 @@ import org.newdawn.slick.gui.GUIContext;
  * 
  */
 public class PanelGuerres extends ZoneCentrale {
-	private Image fondGInactives;
-	private Image fondGImminentes;
-	private Image fondGActives;
-	private Image fondGNEntreprises;
+	private Image	fondGInactives;
+	private Image	fondGImminentes;
+	private Image	fondGActives;
+	private Image	fondGNEntreprises;
 
 	/**
 	 * @param container

@@ -6,7 +6,7 @@ public class SenateurDejaOccupeException extends Exception {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 7059970302822880017L;
+	private static final long	serialVersionUID	= 7059970302822880017L;
 
 	public SenateurDejaOccupeException() {
 		if (Main.debug)

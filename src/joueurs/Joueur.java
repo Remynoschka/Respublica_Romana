@@ -23,13 +23,25 @@ import exception.NbDeException;
  * 
  */
 public class Joueur {
-	private int ID;
-	protected String nom; // Nom du joueur
-	protected int talentsCoffre; // talents dans le coffre de faction
-	protected List<Senateur> senateurs; // les senateurs poses
-	protected List<Carte> mainCarte; // les cartes en main
-	protected Image imgFaction;
-	public static final Color COLOR_DISPLAY_NAME = new Color(215, 160, 75);
+	private int					ID;
+	protected String			nom;											// Nom
+																				// du
+																				// joueur
+	protected int				talentsCoffre;									// talents
+																				// dans
+																				// le
+																				// coffre
+																				// de
+																				// faction
+	protected List<Senateur>	senateurs;										// les
+																				// senateurs
+																				// poses
+	protected List<Carte>		mainCarte;										// les
+																				// cartes
+																				// en
+																				// main
+	protected Image				imgFaction;
+	public static final Color	COLOR_DISPLAY_NAME	= new Color(215, 160, 75);
 
 	public Joueur(int ID, String nom, ArrayList<Carte> mainDepart, Image img) {
 		this.ID = ID;
@@ -39,7 +51,7 @@ public class Joueur {
 		this.imgFaction = img;
 	}
 
-	public Joueur(int ID,String nom, Image img) {
+	public Joueur(int ID, String nom, Image img) {
 		this.ID = ID;
 		this.nom = nom;
 		mainCarte = new ArrayList<Carte>();
@@ -58,16 +70,17 @@ public class Joueur {
 			e.printStackTrace();
 		}
 	}
+
 	public Joueur(String nom) {
 		this.nom = nom;
 		mainCarte = new ArrayList<Carte>();
 		senateurs = new ArrayList<Senateur>();
-//		try {
-			this.imgFaction = null;
-//		} catch (SlickException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		// try {
+		this.imgFaction = null;
+		// } catch (SlickException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
 	}
 
 	// ------------------------------------------------------------------------
@@ -171,8 +184,8 @@ public class Joueur {
 	public int getID() {
 		return ID;
 	}
-	
-	public void setID(int ID){
+
+	public void setID(int ID) {
 		this.ID = ID;
 	}
 }

@@ -12,7 +12,7 @@ import org.newdawn.slick.gui.GUIContext;
  * 
  */
 public abstract class PanelCurieContent extends ZoneCentrale {
-	protected Image fond;
+	protected Image	fond;
 
 	public PanelCurieContent(GUIContext container) throws SlickException {
 		super(container);

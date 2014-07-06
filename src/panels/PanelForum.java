@@ -15,8 +15,8 @@ import org.newdawn.slick.gui.GUIContext;
  * 
  */
 public class PanelForum extends ZoneCentrale {
-	private Image fond;
-	private Image forum;
+	private Image	fond;
+	private Image	forum;
 
 	/**
 	 * @param container

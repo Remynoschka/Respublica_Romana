@@ -20,12 +20,12 @@ import extended_components.Ecran;
  * @author Remynoschka
  */
 public class EcranAcceuil extends Ecran {
-	public static final int ID = 0;
-	private static final String FOND_PATH = "./data/images/fonds/acceuil.jpg";
-	private static Image imageFond;
-	private Bouton heberger;
-	private Bouton rejoindre;
-	private Bouton quit;
+	public static final int		ID			= 0;
+	private static final String	FOND_PATH	= "./data/images/fonds/acceuil.jpg";
+	private static Image		imageFond;
+	private Bouton				heberger;
+	private Bouton				rejoindre;
+	private Bouton				quit;
 
 	/**
 	 * Creates new form EcranAcceuil

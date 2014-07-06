@@ -21,13 +21,13 @@ import org.newdawn.slick.state.GameState;
  * 
  */
 public class Combobox<E> extends Components {
-	protected List<E> liste;
-	protected E selectedItem;
-	protected boolean deroule;
-	protected static final int HEIGHT_ITEM = 100;
-	protected static Image bouton;
-	protected static Image boutonHover;
-	protected static Image boutonOnClick;
+	protected List<E>			liste;
+	protected E					selectedItem;
+	protected boolean			deroule;
+	protected static final int	HEIGHT_ITEM	= 100;
+	protected static Image		bouton;
+	protected static Image		boutonHover;
+	protected static Image		boutonOnClick;
 
 	/**
 	 * @param container

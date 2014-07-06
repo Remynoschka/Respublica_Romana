@@ -18,10 +18,10 @@ import org.newdawn.slick.gui.GUIContext;
  * 
  */
 public abstract class Popup extends Components {
-	public static final int WIDTH = 512;
-	public static final int HEIGHT = 256;
-	private String titre;
-	private String message;
+	public static final int	WIDTH	= 512;
+	public static final int	HEIGHT	= 256;
+	private String			titre;
+	private String			message;
 
 	/**
 	 * 

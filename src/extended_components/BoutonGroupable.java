@@ -16,10 +16,10 @@ import Actions.Action;
  * 
  */
 public abstract class BoutonGroupable extends Components {
-	protected boolean selected = false;
-	protected GroupeBoutons groupe;
-	protected Action action;
-	protected String text;
+	protected boolean		selected	= false;
+	protected GroupeBoutons	groupe;
+	protected Action		action;
+	protected String		text;
 
 	public BoutonGroupable(GUIContext container, int x, int y, GameState etat)
 			throws SlickException {
@@ -114,11 +114,12 @@ public abstract class BoutonGroupable extends Components {
 
 	@Override
 	public void mouseClicked(int button, int x, int y, int clickCount) {
-		if (Fenetre.FENETRE.getVueActuelle() == conteneur  && !Fenetre.FENETRE.hasPopupActive())
-		if (x > getX() && x < getX() + getWidth() && y > getY()
-				&& y < getY() + getHeight()) {
-			selectionner();
-		}
+		if (Fenetre.FENETRE.getVueActuelle() == conteneur
+				&& !Fenetre.FENETRE.hasPopupActive())
+			if (x > getX() && x < getX() + getWidth() && y > getY()
+					&& y < getY() + getHeight()) {
+				selectionner();
+			}
 
 	}
 
